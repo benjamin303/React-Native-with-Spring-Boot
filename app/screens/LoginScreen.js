@@ -13,14 +13,12 @@ import CustomButton from '../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
 import {useForm, Controller} from 'react-hook-form';
 import StyleSheet from '../Styles/Style';
-import { TextInput } from 'react-native-paper';
-
+import {TextInput} from 'react-native-paper';
 
 const LoginScreen = () => {
   const {height} = useWindowDimensions();
   const navigation = useNavigation();
   const [password, setPassword] = useState('');
-
 
   const {
     control,
@@ -51,49 +49,40 @@ const LoginScreen = () => {
           resizeMode="contain"
         />
 
-        
-          <CustomInput
-            name="username"
-            placeholder="Username"
-            control={control}
-            rules={{required: 'Username is required'}}
-          />
+        <CustomInput
+          name="username"
+          placeholder="Username"
+          control={control}
+          rules={{required: 'Username is required'}}
+        />
 
-          <CustomInput
-            name="password"
-            placeholder="Password"
-            secureTextEntry
-            control={control}
-            rules={{
-              required: 'Password is required',
-              minLength: {
-                value: 3,
-                message: 'Password should be minimum 3 characters long',
-              },
-            }}
-          />
+        <CustomInput
+          name="password"
+          placeholder="Password"
+          secureTextEntry
+          control={control}
+          rules={{
+            required: 'Password is required',
+            minLength: {
+              value: 3,
+              message: 'Password should be minimum 3 characters long',
+            },
+          }}
+        />
 
-          <CustomButton
-            text="Log In"
-            onPress={handleSubmit(onSignInPressed)}
-          />
-
+        <CustomButton text="Log In" onPress={handleSubmit(onSignInPressed)} />
+{/* 
         <CustomButton
           text="Forgot password?"
           onPress={onForgotPasswordPressed}
           type="TERTIARY"
-        />
-<Button
-  onPress={onSignUpPress}
-  title="Learn More"
-  color="blue"
-  accessibilityLabel="Learn more about this purple button"
-/>
-        <CustomButton
-          text="Don't have an account? Create on"
-          onPress={onSignUpPress}
-          type="TERTIARY"
-          />
+        /> */}
+        <View style={StyleSheet.registerLogin}>
+          <Text>Not a member? </Text>
+          <Text onPress={onSignUpPress} style={StyleSheet.textOnPress}>
+            Register here.
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );

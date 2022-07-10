@@ -19,7 +19,7 @@ const CustomInput = ({
           <View
             style={[
               styles.container,
-              {borderColor: error ? 'red' : '#e8e8e8'},
+              {borderColor: error ? 'red' : '#ECF4F1'},
             ]}>
             <TextInput
               value={value}
@@ -44,11 +44,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: '100%',
 
-    borderColor: '#e8e8e8',
+    borderColor: '#ECF4F1',
     borderWidth: 1,
-    borderRadius: 5,
     borderRadius: 20,
-
+    
     paddingHorizontal: 10,
     marginVertical: 5,
   },

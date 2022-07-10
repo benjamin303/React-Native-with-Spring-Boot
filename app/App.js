@@ -9,12 +9,19 @@
  import React from 'react';
  import { SafeAreaView, StyleSheet, Text, } from 'react-native';
  import Navigation from './navigation';
+ import { NavigationContainer } from '@react-navigation/native';
+ import Tabs from './components/Tabs';
  
  const App = () => {
    return (
+    <>
      <SafeAreaView style={styles.root}>
        <Navigation />
+     {/* <NavigationContainer>
+        <Tabs />
+     </NavigationContainer> */}
      </SafeAreaView>
+    </>
    );
  };
  
